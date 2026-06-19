@@ -110,7 +110,7 @@
 <header><div class="wrap"><nav>
   <div class="logo">Gran-Bud <span>Nagrobki</span></div>
   <div class="nav-links" id="menu">
-    <a href="#oferta">Oferta</a><a href="#onas">O nas</a><a href="#galeria">Galeria</a><a href="#kontakt">Kontakt</a>
+    <a href="#oferta">Oferta</a><a href="#onas">O nas</a><a href="#galeria">Galeria</a><a href="#projekty3d">Projekty 3D</a><a href="#projektuj">Konfigurator</a><a href="#kontakt">Kontakt</a>
     <a class="btn btn-gold" href="tel:+48793324739">Zobacz nasze realizacje</a>
   </div>
   <button class="burger" id="burger" aria-label="Menu">☰</button>
@@ -169,6 +169,171 @@
     <div class="tile reveal" style="background-image:url('img/g6.jpg')"><span>Nasz zakład</span></div>
   </div>
 </div></section>
+
+<style>
+  .p3d-sec{background:var(--cream-2)}
+  .p3d-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:22px;margin-top:8px}
+  .p3d-card{background:var(--white);border-radius:18px;overflow:hidden;box-shadow:var(--shadow)}
+  .p3d-frame{position:relative;width:100%;aspect-ratio:16/10;background:#16181c}
+  .p3d-frame iframe{position:absolute;inset:0;width:100%;height:100%;border:0}
+  .p3d-cap{padding:13px 16px 15px;font-weight:500;color:var(--espresso);font-size:1rem}
+  .p3d-cap span{color:var(--gold-d);font-size:.82rem}
+  .p3d-credit{text-align:center;margin-top:26px;color:var(--muted);font-size:.9rem}
+  .cfg-wrap{display:grid;grid-template-columns:1.25fr .9fr;gap:28px;align-items:stretch;background:var(--white);border:1px solid rgba(141,124,84,.18);border-radius:22px;padding:18px;box-shadow:var(--shadow)}
+  .cfg-viewer{position:relative;border-radius:16px;overflow:hidden;background:linear-gradient(180deg,#eceae4,#d9d6cd);min-height:440px}
+  .cfg-viewer canvas{width:100%;height:100%;display:block;cursor:grab}
+  .cfg-viewer canvas:active{cursor:grabbing}
+  .cfg-hint{position:absolute;left:14px;bottom:12px;background:rgba(33,36,42,.6);color:#fff;font-size:.78rem;padding:6px 11px;border-radius:999px;pointer-events:none}
+  .cfg-panel{display:flex;flex-direction:column;gap:15px;padding:8px 8px 8px 4px}
+  .cfg-lbl{display:block;font-size:.72rem;letter-spacing:2px;text-transform:uppercase;color:var(--gold-d);font-weight:600;margin-bottom:8px}
+  .cfg-opts{display:flex;flex-wrap:wrap;gap:8px}
+  .cfg-chip{padding:.5rem .9rem;border-radius:999px;border:1px solid rgba(141,124,84,.4);background:transparent;color:var(--espresso-2);font-size:.86rem;cursor:pointer;transition:.2s;font-family:inherit}
+  .cfg-chip:hover{border-color:var(--gold-d)}
+  .cfg-chip.on{background:var(--espresso);color:#fff;border-color:var(--espresso)}
+  .cfg-swatches{display:flex;flex-wrap:wrap;gap:10px}
+  .cfg-sw{width:34px;height:34px;border-radius:50%;cursor:pointer;border:2px solid transparent;box-shadow:0 0 0 1px rgba(0,0,0,.18) inset;transition:.2s}
+  .cfg-sw.on{border-color:var(--gold-d);transform:scale(1.12)}
+  .cfg-in{width:100%;padding:.6rem .8rem;border:1px solid rgba(141,124,84,.4);border-radius:10px;font-family:inherit;font-size:.92rem;color:var(--espresso);background:var(--cream);margin-bottom:8px}
+  .cfg-in:focus{outline:none;border-color:var(--gold-d)}
+  .cfg-summary{background:var(--cream-2);border-radius:12px;padding:14px 16px;font-size:.9rem;color:var(--espresso-2);line-height:1.7}
+  .cfg-summary b{color:var(--espresso)}
+  .cfg-panel .btn{justify-content:center}
+  @media(max-width:880px){.cfg-wrap{grid-template-columns:1fr}.p3d-grid{grid-template-columns:1fr}.cfg-viewer{min-height:340px}}
+</style>
+
+<section id="projekty3d" class="p3d-sec"><div class="wrap">
+  <div class="head reveal"><span class="eyebrow">Zobacz w 3D</span><h2>Nasze projekty w 3D</h2><p>Wybrane realizacje pokazujemy jako modele 3D — obracają się na żywo, a Ty możesz złapać je myszką i obejrzeć z każdej strony, dokładnie tak, jak będą wyglądać na miejscu.</p></div>
+  <div class="p3d-grid">
+    <div class="p3d-card reveal"><div class="p3d-frame"><iframe title="Nagrobek podwójny z krzyżem" src="https://sketchfab.com/models/49277cb567ef4836b98c0ac6233e3d74/embed?autospin=0.3&autostart=1&preload=1&ui_infos=0&ui_controls=1&ui_stop=0&ui_hint=0&ui_theme=dark" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen loading="lazy"></iframe></div><div class="p3d-cap">Nagrobek podwójny z krzyżem <span>· obraca się w 3D</span></div></div>
+    <div class="p3d-card reveal"><div class="p3d-frame"><iframe title="Pomnik z ciemnego granitu" src="https://sketchfab.com/models/98b7b25e7d604aeb81735a3bd98fb80a/embed?autospin=0.3&autostart=1&preload=1&ui_infos=0&ui_controls=1&ui_stop=0&ui_hint=0&ui_theme=dark" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen loading="lazy"></iframe></div><div class="p3d-cap">Pomnik z ciemnego granitu <span>· obraca się w 3D</span></div></div>
+    <div class="p3d-card reveal"><div class="p3d-frame"><iframe title="Nagrobki w jasnym granicie" src="https://sketchfab.com/models/aecd7af1e6a84d29ae16679f3d591a7a/embed?autospin=0.3&autostart=1&preload=1&ui_infos=0&ui_controls=1&ui_stop=0&ui_hint=0&ui_theme=dark" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen loading="lazy"></iframe></div><div class="p3d-cap">Nagrobki w jasnym granicie <span>· obraca się w 3D</span></div></div>
+    <div class="p3d-card reveal"><div class="p3d-frame"><iframe title="Czarny granit polerowany" src="https://sketchfab.com/models/19108b957a0c4a98b16a448f84b3b1c5/embed?autospin=0.3&autostart=1&preload=1&ui_infos=0&ui_controls=1&ui_stop=0&ui_hint=0&ui_theme=dark" allow="autoplay; fullscreen; xr-spatial-tracking" allowfullscreen loading="lazy"></iframe></div><div class="p3d-cap">Czarny granit polerowany <span>· obraca się w 3D</span></div></div>
+  </div>
+  <p class="p3d-credit">Wizualizacje 3D: Wojciech Homa</p>
+</div></section>
+
+<section id="projektuj"><div class="wrap">
+  <div class="head reveal"><span class="eyebrow">Zaprojektuj online</span><h2>Zaprojektuj swój nagrobek</h2><p>Dobierz kształt, kamień i dodatki, wpisz napis — i zobacz swój nagrobek w 3D. Gotowy projekt wyślij do nas jednym kliknięciem, a przygotujemy wycenę.</p></div>
+  <div class="cfg-wrap reveal">
+    <div class="cfg-viewer"><canvas id="cfgCanvas"></canvas><div class="cfg-hint" id="cfgHint">Złap i obróć ↔ · przybliż scrollem</div></div>
+    <div class="cfg-panel">
+      <div><span class="cfg-lbl">Kształt</span><div class="cfg-opts" id="cfgShape">
+        <button class="cfg-chip on" data-v="klasyczny">Klasyczny</button>
+        <button class="cfg-chip" data-v="nowoczesny">Nowoczesny</button>
+        <button class="cfg-chip" data-v="podwojny">Podwójny</button></div></div>
+      <div><span class="cfg-lbl">Kolor kamienia</span><div class="cfg-swatches" id="cfgColor"></div></div>
+      <div><span class="cfg-lbl">Dodatki</span><div class="cfg-opts" id="cfgAdd">
+        <button class="cfg-chip on" data-k="cross">Krzyż</button>
+        <button class="cfg-chip" data-k="lampion">Lampion</button>
+        <button class="cfg-chip" data-k="wazon">Wazon</button></div></div>
+      <div><span class="cfg-lbl">Napis</span>
+        <input class="cfg-in" id="cfgName" maxlength="28" placeholder="Imię i nazwisko">
+        <input class="cfg-in" id="cfgDates" maxlength="20" placeholder="1950 – 2024"></div>
+      <div class="cfg-summary" id="cfgSummary"></div>
+      <a class="btn btn-gold" id="cfgSend" target="_blank" rel="noopener">Zapytaj o wycenę z tym projektem</a>
+      <a class="btn btn-dark" href="tel:+48793324739">lub zadzwoń: +48 793 324 739</a>
+    </div>
+  </div>
+</div></section>
+
+<script type="importmap">
+{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js","three/addons/":"https://cdn.jsdelivr.net/npm/three@0.160.0/examples/jsm/"}}
+</script>
+<script type="module">
+const PHONE="48793324739";
+const COLORS=[
+ {n:"Czarny granit",hex:"#17181c"},
+ {n:"Grafitowy",hex:"#3a3e45"},
+ {n:"Brązowy",hex:"#5a4636"},
+ {n:"Szary",hex:"#7d8086"},
+ {n:"Jasny",hex:"#cdcabf"},
+ {n:"Czerwony (Vanga)",hex:"#6e2f2e"}];
+const SHAPES={klasyczny:"klasyczny (łukowy)",nowoczesny:"nowoczesny (prosty)",podwojny:"podwójny"};
+const state={shape:"klasyczny",color:COLORS[0],cross:true,lampion:false,wazon:false,name:"",dates:""};
+let rebuild=()=>{},recolor=()=>{},redraw=()=>{};
+const swWrap=document.getElementById("cfgColor");
+COLORS.forEach((c,i)=>{const b=document.createElement("button");b.className="cfg-sw"+(i===0?" on":"");b.style.background=c.hex;b.title=c.n;b.dataset.i=i;swWrap.appendChild(b);});
+function setActive(c,el){[...c.children].forEach(x=>x.classList.remove("on"));el.classList.add("on");}
+document.getElementById("cfgShape").addEventListener("click",e=>{const b=e.target.closest(".cfg-chip");if(!b)return;state.shape=b.dataset.v;setActive(e.currentTarget,b);rebuild();update();});
+swWrap.addEventListener("click",e=>{const b=e.target.closest(".cfg-sw");if(!b)return;state.color=COLORS[+b.dataset.i];setActive(swWrap,b);recolor();update();});
+document.getElementById("cfgAdd").addEventListener("click",e=>{const b=e.target.closest(".cfg-chip");if(!b)return;const k=b.dataset.k;state[k]=!state[k];b.classList.toggle("on",state[k]);rebuild();update();});
+const nameI=document.getElementById("cfgName"),datesI=document.getElementById("cfgDates");
+nameI.addEventListener("input",()=>{state.name=nameI.value;redraw();update();});
+datesI.addEventListener("input",()=>{state.dates=datesI.value;redraw();update();});
+function update(){
+ const add=[];if(state.cross)add.push("krzyż");if(state.lampion)add.push("lampion");if(state.wazon)add.push("wazon");
+ const napis=[state.name,state.dates].filter(Boolean).join(" ");
+ document.getElementById("cfgSummary").innerHTML="<b>Twój projekt:</b><br>• Kształt: "+SHAPES[state.shape]+"<br>• Kamień: "+state.color.n+"<br>• Dodatki: "+(add.length?add.join(", "):"brak")+"<br>• Napis: "+(napis||"—");
+ const msg="Dzień dobry, zaprojektowałem/am nagrobek na Państwa stronie.\n• Kształt: "+SHAPES[state.shape]+"\n• Kamień: "+state.color.n+"\n• Dodatki: "+(add.length?add.join(", "):"brak")+"\n• Napis: "+(napis||"—")+"\nProszę o wycenę. Pozdrawiam.";
+ document.getElementById("cfgSend").href="https://wa.me/"+PHONE+"?text="+encodeURIComponent(msg);
+}
+update();
+try{
+ const THREE=await import("three");
+ const {OrbitControls}=await import("three/addons/controls/OrbitControls.js");
+ const {RoomEnvironment}=await import("three/addons/environments/RoomEnvironment.js");
+ const canvas=document.getElementById("cfgCanvas"),boxEl=canvas.parentElement;
+ const renderer=new THREE.WebGLRenderer({canvas,antialias:true,alpha:true});
+ renderer.setPixelRatio(Math.min(devicePixelRatio,2));
+ renderer.shadowMap.enabled=true;renderer.shadowMap.type=THREE.PCFSoftShadowMap;
+ const scene=new THREE.Scene();
+ const pmrem=new THREE.PMREMGenerator(renderer);
+ scene.environment=pmrem.fromScene(new RoomEnvironment(),0.04).texture;
+ const camera=new THREE.PerspectiveCamera(36,1,0.1,100);camera.position.set(3.1,2.1,4.2);
+ const controls=new OrbitControls(camera,canvas);
+ controls.enableDamping=true;controls.dampingFactor=.08;controls.minDistance=2.8;controls.maxDistance=8;
+ controls.maxPolarAngle=Math.PI*0.52;controls.target.set(0,1.0,0.15);
+ controls.autoRotate=true;controls.autoRotateSpeed=0.7;
+ canvas.addEventListener("pointerdown",()=>controls.autoRotate=false);
+ let idle;window.addEventListener("pointerup",()=>{clearTimeout(idle);idle=setTimeout(()=>controls.autoRotate=true,2500);});
+ const dir=new THREE.DirectionalLight(0xffffff,1.5);dir.position.set(4,7,4);dir.castShadow=true;
+ dir.shadow.mapSize.set(1024,1024);const cS=dir.shadow.camera;cS.near=1;cS.far=22;cS.left=-4;cS.right=4;cS.top=4;cS.bottom=-4;scene.add(dir);
+ scene.add(new THREE.AmbientLight(0xffffff,0.22));
+ const ground=new THREE.Mesh(new THREE.CircleGeometry(9,64),new THREE.MeshStandardMaterial({color:0xc9c5ba,roughness:1}));
+ ground.rotation.x=-Math.PI/2;ground.receiveShadow=true;scene.add(ground);
+ const stoneMat=new THREE.MeshStandardMaterial({color:new THREE.Color(state.color.hex),roughness:0.16,metalness:0.0,envMapIntensity:1.15});
+ const goldMat=new THREE.MeshStandardMaterial({color:0xe6c878,emissive:0x2a1f00,roughness:.5,metalness:.3});
+ const ic=document.createElement("canvas");ic.width=1024;ic.height=512;const ix=ic.getContext("2d");
+ const itex=new THREE.CanvasTexture(ic);itex.anisotropy=8;
+ const insMat=new THREE.MeshStandardMaterial({map:itex,transparent:true,roughness:.45,metalness:.1,envMapIntensity:.4});
+ function draw(){ix.clearRect(0,0,1024,512);ix.fillStyle="#dcc789";ix.textAlign="center";ix.textBaseline="middle";
+  const nm=(state.name||"").trim(),dt=(state.dates||"").trim();
+  if(nm){ix.font='600 96px "Cormorant Garamond",serif';ix.fillText(nm,512,205);}
+  if(dt){ix.font='500 60px "Inter",sans-serif';ix.fillText(dt,512,335);}
+  itex.needsUpdate=true;}
+ redraw=draw;
+ if(document.fonts&&document.fonts.ready)document.fonts.ready.then(draw);
+ const group=new THREE.Group();scene.add(group);
+ function box3(w,h,d,x,y,z,m){const me=new THREE.Mesh(new THREE.BoxGeometry(w,h,d),m);me.position.set(x,y,z);me.castShadow=true;me.receiveShadow=true;group.add(me);return me;}
+ function clearGroup(){while(group.children.length){const c=group.children.pop();if(c.geometry)c.geometry.dispose();}}
+ function build(){
+  clearGroup();
+  const W=state.shape==="podwojny"?1.7:1.1,w=W/2,bodyH=0.95,baseH=0.16,plH=0.18;
+  box3(W+0.5,baseH,2.3,0,baseH/2,-0.1,stoneMat);
+  box3(W*0.98,0.12,1.35,0,baseH+0.06,0.42,stoneMat);
+  box3(W+0.12,plH,0.34,0,baseH+plH/2,-0.78,stoneMat);
+  const s=new THREE.Shape();s.moveTo(-w,0);s.lineTo(-w,bodyH);
+  if(state.shape==="nowoczesny"){s.lineTo(-w,bodyH+0.14);s.lineTo(w,bodyH+0.14);s.lineTo(w,bodyH);}
+  else if(state.shape==="podwojny"){s.absarc(-w/2,bodyH,w/2,Math.PI,0,true);s.absarc(w/2,bodyH,w/2,Math.PI,0,true);}
+  else{s.absarc(0,bodyH,w,Math.PI,0,true);}
+  s.lineTo(w,0);s.lineTo(-w,0);
+  const sg=new THREE.ExtrudeGeometry(s,{depth:0.16,bevelEnabled:false,curveSegments:48});
+  const stela=new THREE.Mesh(sg,stoneMat);stela.castShadow=true;stela.receiveShadow=true;
+  const y0=baseH+plH;stela.position.set(0,y0,-0.86);group.add(stela);
+  const topY=y0+(state.shape==="nowoczesny"?bodyH+0.14:state.shape==="podwojny"?bodyH+w/2:bodyH+w);
+  const insW=W*0.8,ins=new THREE.Mesh(new THREE.PlaneGeometry(insW,insW*0.5),insMat);
+  ins.position.set(0,y0+bodyH*0.52,-0.696);group.add(ins);
+  if(state.cross){const cz=-0.74,cy=topY+0.20;box3(0.07,0.40,0.06,0,cy,cz,stoneMat);box3(0.26,0.07,0.06,0,cy+0.06,cz,stoneMat);}
+  if(state.lampion){box3(0.14,0.20,0.14,-w,baseH+0.10,0.95,stoneMat);box3(0.10,0.07,0.10,-w,baseH+0.23,0.95,goldMat);}
+  if(state.wazon){const v=new THREE.Mesh(new THREE.CylinderGeometry(0.08,0.06,0.20,20),stoneMat);v.position.set(w,baseH+0.12,0.95);v.castShadow=true;group.add(v);}
+ }
+ rebuild=build;recolor=()=>{stoneMat.color.set(state.color.hex);};
+ build();draw();
+ function resize(){const ww=boxEl.clientWidth,hh=boxEl.clientHeight;if(!ww||!hh)return;renderer.setSize(ww,hh,false);camera.aspect=ww/hh;camera.updateProjectionMatrix();}
+ new ResizeObserver(resize).observe(boxEl);resize();
+ (function loop(){requestAnimationFrame(loop);controls.update();renderer.render(scene,camera);})();
+}catch(err){const h=document.getElementById("cfgHint");if(h)h.textContent="Podgląd 3D niedostępny w tej przeglądarce — opcje i wycena działają normalnie.";console.error("cfg3d",err);}
+</script>
 
 <section class="reviews"><div class="wrap reveal">
   <div class="stars">★ ★ ★ ★ ★</div><h2>Zaufały nam rodziny</h2><p>Rodziny, które powierzyły nam wykonanie nagrobka, doceniają spokojne podejście, solidne rzemiosło i to, że dotrzymujemy ustaleń oraz terminów.</p>
